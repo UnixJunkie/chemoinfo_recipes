@@ -11,5 +11,21 @@ $ obabel INFILE OUTFILE --partialcharge gasteiger
 # (will create a .csv file named after the input file)
 $ mayachemtools/bin/MACCSKeysFingerprints.pl --size 166 [INFILE] --CompoundIDMode MolName
 
+# Install open babel from sources
+
+    wget https://github.com/openbabel/openbabel/archive/openbabel-2-4-1.tar.gz
+    tar xzf openbabel-2-4-1.tar.gz
+    cd openbabel-openbabel-2-4-1/
+    mkdir build
+    cd build
+    cat <<EOF > build.sh
+    mkdir -p ~/usr
+    cmake -DPYTHON_BINDINGS=true -DCMAKE_INSTALL_PREFIX:PATH=$HOME/usr ../
+    EOF
+    chmod 755 build.sh
+    ./build.sh
+    make -j4
+    make install
+
 [1] http://www.mayachemtools.org/
 [2] http://openbabel.org/wiki/Main_Page
