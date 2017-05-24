@@ -27,5 +27,10 @@ $ mayachemtools/bin/MACCSKeysFingerprints.pl --size 166 [INFILE] --CompoundIDMod
     make -j4
     make install
 
+# 3D conformer generation using Corina classic
+# (one low energy conformer per molecule)
+# the optional [-d wh] add/writes out hydrogens (makes them explicit)
+$ corina [-d wh] < INPUT.sdf > OUTPUT.sdf
+
 [1] http://www.mayachemtools.org/
 [2] http://openbabel.org/wiki/Main_Page
