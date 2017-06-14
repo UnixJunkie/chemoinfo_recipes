@@ -16,6 +16,9 @@ $ mayachemtools/bin/MACCSKeysFingerprints.pl --size 166 [INFILE] --CompoundIDMod
 # the optional [-d wh] add/writes out hydrogens (makes them explicit)
 $ corina [-d wh] < INPUT.sdf > OUTPUT.sdf
 
+# RMSD between two ligands (curr. will be superposed onto ref.)
+fconv -rmsd current.mol2 --s=reference.mol2
+
 # Install open babel from sources
 
     wget https://github.com/openbabel/openbabel/archive/openbabel-2-4-1.tar.gz
