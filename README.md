@@ -19,6 +19,9 @@ $ corina [-d wh] < INPUT.sdf > OUTPUT.sdf
 # RMSD between two ligands (curr. will be superposed onto ref.)
 fconv -rmsd current.mol2 --s=reference.mol2
 
+# compute Bemis-Murcko scaffolds of molecules
+stripper --in molecules.smi --out scaffolds.txt
+
 # Install open babel from sources
 
     wget https://github.com/openbabel/openbabel/archive/openbabel-2-4-1.tar.gz
