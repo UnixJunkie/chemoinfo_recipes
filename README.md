@@ -22,6 +22,11 @@ fconv -rmsd current.mol2 --s=reference.mol2
 # compute Bemis-Murcko scaffolds of molecules
 stripper --in molecules.smi --out scaffolds.txt
 
+# print a molecule in EPS format (for LateX manuscripts); obabel then inkscape
+# SMILES to EPS, MOL2 to EPS or SVG to EPS would work the same
+obabel molecule.smi -O molecule.svg
+inkscape molecule.svg -E molecule.eps --export-ignore-filters --export-ps-level=3
+
 # Install open babel from sources
 
     wget https://github.com/openbabel/openbabel/archive/openbabel-2-4-1.tar.gz
