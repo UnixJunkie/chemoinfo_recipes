@@ -34,6 +34,36 @@ Command line recipes for the working chemoinformatician
     obabel molecule.smi -O molecule.svg
     inkscape molecule.svg -E molecule.eps --export-ignore-filters --export-ps-level=3
 
+# smi2eps in Bash (smi -> svg -> pdf -> cropped-pdf -> ps -> eps)
+
+```
+# librsvg2-bin provides rsvg-convert
+# texlive-extra-utils provides pdfcrop
+# ghostscript provides pdf2ps
+# ps2eps provides ps2eps
+function svg2eps () {
+    tmp_pdf_out=`echo $1 | sed 's/\.svg$/\_tmp.pdf/g'`
+    pdf_out=`echo $1 | sed 's/\.svg$/\.pdf/g'`
+    ps_out=`echo $1 | sed 's/\.svg$/\.ps/g'`
+    eps_out=`echo $1 | sed 's/\.svg$/\.eps/g'`
+    svg=$1
+    rsvg-convert -f pdf $svg -o $tmp_pdf_out
+    pdfcrop $tmp_pdf_out $pdf_out
+    pdf2ps $pdf_out $ps_out
+    ps2eps < $ps_out > $eps_out
+}
+```
+
+```
+# openbabel provides obabel
+function smi2eps () {
+    smi=$1
+    svg_out=`echo $1 | sed 's/\.smi$/\.svg/g'`
+    obabel $smi -O $svg_out -xC -xd
+    svg2eps $svg_out
+}
+```
+
 # Install open babel from sources
 
     wget https://github.com/openbabel/openbabel/archive/openbabel-2-4-1.tar.gz
