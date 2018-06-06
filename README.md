@@ -22,7 +22,7 @@ Command line recipes for the working chemoinformatician
     
 # lowest energy conformer generation using cxcalc from Chemaxon
 
-    cxcalc conformers in.smi -m 1 -f sdf > out.sdf
+    cxcalc conformers in.smi -m 1 > out.sdf
 
 # lowest energy conformer generation using omega from OpenEye scientific
 
