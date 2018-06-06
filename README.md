@@ -19,6 +19,14 @@ Command line recipes for the working chemoinformatician
 # the optional [-d wh] add/writes out hydrogens (makes them explicit)
 
     corina [-d wh] < INPUT.sdf > OUTPUT.sdf
+    
+# lowest energy conformer generation using cxcalc from Chemaxon
+
+    cxcalc conformers in.smi -O 0 -m 1 -f sdf > out.sdf
+
+# lowest energy conformer generation using omega from OpenEye scientific
+
+    omega -in in.smi -out out.sdf -maxconfs 1
 
 # RMSD between two ligands (curr. will be superposed onto ref.)
 
