@@ -5,9 +5,9 @@ Command line recipes for the working chemoinformatician
 
     obabel INFILE -O OUTFILE --unique
 
-# Assign partial charges using the Gasteiger-Marsili charge model (PEOE)
+# Assign MMFF94 partial charges
 
-    obabel INFILE -O OUTFILE --partialcharge gasteiger
+    obabel INFILE -O OUTFILE --partialcharge mmff94
 
 # Compute MACCS 166bits fingerprints and output them as strings
 # (will create a .csv file named after the input file)
