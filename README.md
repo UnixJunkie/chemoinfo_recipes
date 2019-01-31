@@ -119,6 +119,18 @@ for f in "$@"; do
 done
 ```
 
+# Get molecules by name, for various file formats
+
+Works even with a "database" file with millions of molecules.
+
+lbvs_consent_mol_get from https://github.com/UnixJunkie/consent
+
+```
+lbvs_consent_mol_get -i molecules.{sdf|mol2|smi} {-names "mol1,mol2,..."|-f names_file}
+```
+
+# Links / Bibliography
+
 [1] http://www.mayachemtools.org/
 
 [2] http://openbabel.org/wiki/Main_Page
