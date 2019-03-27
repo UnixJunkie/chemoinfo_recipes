@@ -19,7 +19,7 @@ Command line recipes for the working chemoinformatician
 # the optional [-d wh] add/writes out hydrogens (makes them explicit)
 
     corina [-d wh] < INPUT.sdf > OUTPUT.sdf
-    
+
 # lowest energy conformer generation using cxcalc from Chemaxon
 
     cxcalc conformers in.smi -m 1 > out.sdf
@@ -87,7 +87,11 @@ function smi2eps () {
     ./build.sh
     make -j4
     make install
-    
+
+# Install rdkit on Mac OS X:
+
+    brew install --HEAD rdkit --with-python3 --with-inchi
+
 # Count molecules, works for various file formats
 
 Store this in a 'molcount' script, somewhere on your PATH.
