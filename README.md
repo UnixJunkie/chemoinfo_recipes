@@ -90,6 +90,7 @@ function smi2eps () {
 
 # Install rdkit on Mac OS X:
 
+    pip3 install numpy
     brew install --HEAD rdkit --with-python3 --with-inchi
 
 # Count molecules, works for various file formats
