@@ -134,6 +134,14 @@ lbvs_consent_mol_get from https://github.com/UnixJunkie/consent
 lbvs_consent_mol_get -i molecules.{sdf|mol2|smi} {-names "mol1,mol2,..."|-f names_file}
 ```
 
+# Sayle hashing of a molecule
+
+Some kind of canonicalization of molecular representations, consisting in the pair:
+
+Sayle_hash(m) = (Canonical_smile_forcing_only_single_bonds_and_noH(m), number_of_Hydrogens_on_non_carbons(m) - sum_of_formal_charges(m))
+
+m being the molecule to hash.
+
 # Links / Bibliography
 
 [1] http://www.mayachemtools.org/
