@@ -142,6 +142,10 @@ Sayle_hash(m) = (Canonical_smile_forcing_only_single_bonds_and_noH(m), number_of
 
 m being the molecule to hash.
 
+# install deepchem on a Mac OS X
+
+pip3 install joblib pandas sklearn tensorflow pillow deepchem
+
 # Links / Bibliography
 
 [1] http://www.mayachemtools.org/
