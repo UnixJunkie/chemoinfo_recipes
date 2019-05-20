@@ -146,7 +146,9 @@ m being the molecule to hash.
 
 No GPU support, but at least its an automatic and simple install procedure.
 
+```
 pip3 install joblib pandas sklearn tensorflow pillow deepchem
+```
 
 # Links / Bibliography
 
