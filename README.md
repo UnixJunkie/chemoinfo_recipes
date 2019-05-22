@@ -145,9 +145,10 @@ m being the molecule to hash.
 # install deepchem on a Mac or Linux
 
 No GPU support, but at least its an automatic and simple install procedure.
+Deepchem's version is fixed to a version that works for what I currently do.
 
 ```
-pip3 install joblib pandas sklearn tensorflow pillow deepchem
+pip3 install joblib pandas sklearn tensorflow pillow simdna deepchem==2.1.1.dev353
 ```
 
 # Links / Bibliography
