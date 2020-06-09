@@ -152,7 +152,9 @@ pip3 install joblib pandas sklearn tensorflow pillow simdna deepchem==2.1.1.dev3
 ```
 
 # standardize molecules in parallel with pardi and standardiser
+
 pip3 install chemo-standardizer
+
 opam install pardi
 ```
 #!/bin/bash
