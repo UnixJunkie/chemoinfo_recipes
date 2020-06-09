@@ -151,6 +151,24 @@ Deepchem's version is fixed to a version that works for what I currently do.
 pip3 install joblib pandas sklearn tensorflow pillow simdna deepchem==2.1.1.dev353
 ```
 
+# standardize molecules in parallel with pardi and standardiser
+pip3 install chemo-standardizer
+opam install pardi
+```
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+    echo "usage: "$0" input.smi output_std.smi"
+    exit 1
+fi
+
+INPUT=$1
+OUTPUT=$2
+
+pardi -i $INPUT -o $OUTPUT -c 400 -d l -ie '.smi' -oe '.smi' \
+      -w 'standardiser -i %IN -o %OUT 2>/dev/null'
+```
+
 # Links / Bibliography
 
 [1] http://www.mayachemtools.org/
