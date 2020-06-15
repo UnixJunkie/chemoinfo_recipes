@@ -105,7 +105,6 @@ Now you should check that you can really use it from Python:
     import rdkit
     from rdkit import Chem
     m = Chem.MolFromSmiles('n1ccccc1')
-    assert(m == Chem.MolToSmiles(m))
 
 # Count molecules, works for various file formats
 
