@@ -98,6 +98,14 @@ function smi2eps () {
     wget -c https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
     sh Miniconda3-latest-MacOSX-x86_64.sh -p ~/usr/miniconda3
     ~/usr/miniconda3/bin/conda install -q -y -c conda-forge rdkit
+    
+Now you should check that you can really use it from Python:
+
+    python3
+    import rdkit
+    from rdkit import Chem
+    m = Chem.MolFromSmiles('n1ccccc1')
+    assert(m == Chem.MolToSmiles(m))
 
 # Count molecules, works for various file formats
 
