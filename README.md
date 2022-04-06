@@ -9,9 +9,15 @@ Command line recipes for the working chemoinformatician
 
     obabel INFILE -O OUTFILE --partialcharge mmff94
     
-# Assign MMFF94 partial charges and hydrogens (protonate) at given pH (7.4)
+# Assign MMFF94 partial charges and hydrogens (protonate) at given pH (7.4) usinb openbabel
 
     obabel in.smi -O out.mol2 --partialcharge mmff94 -p 7.4
+    
+# Major tautomer at pH 7.4 usinb ChemAxon cxcalc
+# (-g: ignore errors; -H: pH; -f sdf: force output format to sdf, to preserve molecule names)
+# input file not being a .smiles might crash the tool!
+
+cxcalc -g majortautomer -H 7.4 -f sdf input.smiles > output_taut74.sdf
 
 # Compute MACCS 166bits fingerprints and output them as strings
 # (will create a .csv file named after the input file)
